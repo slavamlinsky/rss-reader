@@ -1,0 +1,133 @@
+.logo{
+    @apply flex w-5/12 md:w-3/12 lg:w-3/12 xl:w-2/12 font-medium text-gray-900 mb-0 md:mb-0 cursor-pointer pl-2;
+
+    & svg {
+        @apply mr-2 transition-all text-white p-2 bg-indigo-500 rounded-full;
+    }
+
+    &:hover svg {
+        @apply mr-3 bg-amber-300 animate-spin p-1;        
+    }
+}
+.navmenu{
+  @apply w-2/12 sm:w-4/12 md:w-6/12 lg:w-6/12 xl:w-8/12 justify-center hidden md:flex;
+}
+.navbtns{
+  @apply w-5/12 md:w-3/12 xl:w-2/12 flex justify-end pr-1;
+}
+.navlink {
+  @apply xl:mr-5 lg:mr-4 px-3 xl:text-lg text-base hover:text-cyan-900 py-1 transition-all delay-100 border-b-2 border-b-transparent hover:border-b-2 hover:border-indigo-500;
+}
+.loginForm {
+  @apply bg-gradient-to-b from-slate-400 to-slate-500 w-96 flex flex-col m-auto p-4 rounded-md mt-3;
+
+  label {
+    @apply flex flex-col text-sm mb-2;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    @apply bg-cyan-50 text-base px-2 py-3 mt-1 outline-none focus:bg-cyan-100 border-r-4 border-transparent focus:border-r-cyan-700 w-full;
+  }
+
+  > button {
+    @apply rounded-lg w-3/5 m-auto mt-3 py-2 bg-cyan-500  text-white hover:shadow-lg hover:bg-teal-400 hover:text-cyan-900;
+  }
+
+  .emailErrorMessage,
+  .passwordErrorMessage {
+    @apply text-center text-white text-xs;
+  }
+}
+
+.registredForm{
+    @apply bg-gradient-to-b from-slate-300 to-slate-400 w-96 m-auto p-8 rounded-md mt-3;
+
+    a {
+        @apply underline text-blue-700;
+    }
+}
+
+.pageBack {
+  @apply shadow-xl m-auto box-border w-full overflow-hidden pb-8;
+}
+
+.postsFeed {
+  @apply shadow-xl m-auto text-center box-border w-full overflow-hidden;
+
+  .feedLogo {
+    @apply h-20 py-3 px-4 mt-6 bg-white rounded-3xl hover:animate-bounce cursor-pointer w-1/6 m-auto items-center;
+
+    img {
+      @apply m-auto;
+    }
+  }
+
+  .feedline {
+    @apply w-10/12 sm:w-3/4 md:w-3/4 lg:w-3/5 m-auto;
+
+    > div:first-child {
+      @apply bg-yellow-50;
+
+      > div:first-child {
+        @apply w-6/12;
+      }
+    }
+  }
+}
+
+.addPostBtn {
+  @apply opacity-20 hover:opacity-75 w-10 h-10 rounded-full bg-slate-300 hover:bg-orange-200 p-2 mr-2 cursor-pointer;
+}
+
+.addNew {
+  label {
+    @apply w-full flex flex-col;
+  }
+
+  .addPostForm {
+    @apply w-3/5 m-auto max-w-xl bg-gradient-to-b from-slate-400 to-slate-500 rounded-lg flex flex-col p-3;
+  }
+
+  input[type="text"],
+  textarea {
+    @apply text-sm py-2 px-2 mb-2 mt-1 outline-none border border-b-2 border-transparent focus:border-b-teal-400 bg-cyan-50;
+  }
+
+  .addPostErrorMessage {
+    @apply text-center text-white text-xs;
+  }
+}
+
+.company{
+    @apply text-center text-2xl m-2 cursor-pointer;
+    & span {
+        @apply  opacity-0;
+        transition: all linear .5s;
+    }
+
+    &:hover span {
+        @apply opacity-100;
+    }
+}
+
+.editNewsLabelImage {
+    @apply relative;
+
+    & span {
+        @apply bg-transparent;
+    }
+
+    & span {        
+        & div {
+            @apply bg-transparent opacity-5 absolute p-3 left-0 bottom-6 pointer-events-none;
+
+        }
+    }
+
+    & span strong:hover {        
+        & div {
+            @apply bg-slate-400 opacity-100;
+        }
+    }
+}

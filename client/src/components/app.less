@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "../utils/colors";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    //font-size: 15px;
+    color: @font-color;
+    // font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
+    // font-family: 'Open Sans', sans-serif;
+
+}
+body{
+    // background-color: @background-color;
+    // background: linear-gradient(45deg, #ffe4e6 0%, #fef9c3 100%);
+    // background: linear-gradient(45deg, #94a3b8 0%, #a8a29e 100%);
+    background: linear-gradient(45deg, #e2e8f0 0%, #e7e5e4 100%);
+        
+    background-attachment: fixed;
+    height: calc(100vh);
+
+    h1 {
+        font-size: 2.2em;
+        text-align: center;
+        margin: .5em 0 .25em;
+    }
+    h2 {
+        font-size: 1.5em;        
+        margin: .5em 0;
+    }
+    h3 {
+        font-size: 1.2em;        
+        margin: .5em 0;
+    }
+}
+
+#root{
+    width: 100%;
+}
+
+.app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;           
+}
+
+.wrap{
+    max-width: 1200px;
+    width: 100%;
+    display: flex;    
+    flex-direction: column;    
+}
+
+// Pagination Styles 
+.page__wrapper{      
+    display: flex;
+    justify-content: center;    
+    margin: 2.5em 4em;   
+    flex-wrap: wrap; 
+}
+.page{
+    border-radius: 50%;  
+    text-align: center;
+    padding: 8px; 
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: #0d9488;
+    margin: .5em;
+    &:hover{
+        background-color: #14b8a6;
+    }
+}
+.page__current{
+    background-color: #2dd4bf;
+}
+
+// Preloader Styles
+.preloader {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+    margin:15px auto;
+    position: relative;
+    color: #AAA;
+    box-sizing: border-box;
+    animation: animloader 2s linear infinite;
+  }
+    
+  @keyframes animloader {
+    0% {
+      box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
+    }
+    25% {
+      box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 2px;
+    }
+    50% {
+      box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 2px,  -38px 0 0 -2px;
+    }
+    75% {
+      box-shadow: 14px 0 0 2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
+    }
+    100% {
+      box-shadow: 14px 0 0 -2px,  38px 0 0 2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
+    }
+  }
