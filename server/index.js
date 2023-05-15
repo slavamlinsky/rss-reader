@@ -73,7 +73,7 @@ async function addOnePost(title, pubDate, link, image, description) {
       });      
 
       // Проверка существования этой новости в БД (по имени / но лучше по дате)
-      candidate = await Post.findOne({ title })
+      candidate = await Post.findOne({ pubDate })
       
       if(!candidate){
         console.log("Сохраняем эту новость в базу данных", post);
@@ -100,7 +100,7 @@ async function loadingFirstNews(feedUrl){
         console.log("RSS лента обновлена " + Math.round((thisMoment - rssUpdated)/1000/60) + " минут назад")
         
         feed.items.forEach((item) => {                
-          addOnePost(item.title.replaceAll("&quot;", "\"").replaceAll("&#039;", "'"), item.pubDate, item.link, item.enclosure.url, item.content.replaceAll("&quot;", "\"").replaceAll("&#039;", "'"));                
+          addOnePost(item.title.replace("&quot;", "\"").replace("&#039;", "'"), item.pubDate, item.link, item.enclosure.url, item.content.replace("&quot;", "\"").replace("&#039;", "'"));                
         });      }          
       
     } catch (e) {
