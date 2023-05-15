@@ -1,7 +1,8 @@
-FROM node:alpine
-WORKDIR /app
+FROM node:16-slim
+WORKDIR /usr/src/app
 COPY package.json ./
 COPY package-lock.json ./
+RUN npm install
 COPY ./ ./
-RUN npm i
-CMD ["npm", "run", "start"]
+EXPOSE 5000
+CMD ["npm", "start"]
