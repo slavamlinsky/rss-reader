@@ -55,15 +55,15 @@ const Feed = () => {
 
     return (
         <div className={styles.postsFeed}>
-            <h1>
+            <h1 className="text-2xl md:text-3xl">
                 Стрічка найсвіжіших новин
             </h1>
-            <h2 className="text-center">
-                Слідкуйте на нашому сайті за найактуальнішими новинами світу
+            <h2 className="text-center text-sm leading-5 md:leading-8 md:text-2xl">
+                Слідкуйте за найактуальнішими новинами світу
             </h2>
 
             {/* кнопки быстрой навигации по RSS лентам  */}
-            <button className="py-2 px-4 bg-slate-100 rounded-md mx-3 hover:bg-slate-300 items-center"
+            <button className={styles.feedChangeBtn}
                 onClick={() => setFeedLink("https://www.radiosvoboda.org/api/zrqiteuuir")}
             >
                 RadioSvoboda
@@ -71,7 +71,7 @@ const Feed = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12.75 19.5v-.75a7.5 7.5 0 00-7.5-7.5H4.5m0-6.75h.75c7.87 0 14.25 6.38 14.25 14.25v.75M6 18.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                 </svg>
             </button>
-            <button className="py-2 px-4 bg-slate-100 rounded-md mx-3 hover:bg-slate-300 items-center"
+            <button className={styles.feedChangeBtn}
                 onClick={() => setFeedLink("https://www.techradar.com/rss/news/computing")
                 }
             >
@@ -80,7 +80,7 @@ const Feed = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12.75 19.5v-.75a7.5 7.5 0 00-7.5-7.5H4.5m0-6.75h.75c7.87 0 14.25 6.38 14.25 14.25v.75M6 18.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                 </svg>
             </button>
-            <button className="py-2 px-4 bg-slate-100 rounded-md mx-3 hover:bg-slate-300 items-center"
+            <button className={styles.feedChangeBtn}
                 onClick={() => setFeedLink("https://static.censor.net/censornet/rss/rss_ru_events.xml")}
             >
                 Цензор.Нет
@@ -88,7 +88,7 @@ const Feed = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12.75 19.5v-.75a7.5 7.5 0 00-7.5-7.5H4.5m0-6.75h.75c7.87 0 14.25 6.38 14.25 14.25v.75M6 18.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                 </svg>
             </button>
-            <button className="py-2 px-4 bg-slate-100 rounded-md mx-3 hover:bg-slate-300 items-center"
+            <button className={styles.feedChangeBtn}
                 onClick={() => setFeedLink("https://tsn.ua/rss/full.rss")}
             >
                 ТСН
@@ -96,7 +96,7 @@ const Feed = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12.75 19.5v-.75a7.5 7.5 0 00-7.5-7.5H4.5m0-6.75h.75c7.87 0 14.25 6.38 14.25 14.25v.75M6 18.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                 </svg>
             </button>
-            <button className="py-2 px-4 bg-slate-100 rounded-md mx-3 hover:bg-slate-300 items-center"
+            <button className={styles.feedChangeBtn}
                 onClick={() => setFeedLink("https://www.dailystar.co.uk/sport/football/?service=rss")}
             >
                 DailyStar
@@ -119,8 +119,8 @@ const Feed = () => {
                 </div>
             )}
 
-            <h1 className="text-3xl mt-4">{feedInfo.title}</h1>
-            <h4 className="text-base mb-4">{feedInfo.date}</h4>
+            <h1 className="text-xl md:text-3xl mt-4">{feedInfo.title}</h1>
+            <h4 className="text-xs md:text-base mb-4">{feedInfo.date}</h4>
             <div className={styles.feedline}>                
                 {posts.filter((item, i) => i < 25).map((item, i) => {
                     return (

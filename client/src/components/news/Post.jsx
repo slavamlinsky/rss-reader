@@ -31,16 +31,14 @@ const Post = ({id, title="", link="", date="", description="", image=""}) => {
   }
     
   return (
-    <div className='w-full border-b-2 border-t-2 shadow-lg bg-slate-50 shadow-gray-400 border-cyan-700 hover:border-orange-400 px-5 py-6 mt-4 mb-8 rounded-xl flex text-left relative'>
-        <div className='w-4/12 relative'>
-            <img src={image} className="pointer-events-none max-w-none w-full" alt="logo" />
-            <img src={image} className="hover:animate-ping-once opacity-15 absolute top-0 max-w-none w-full" alt="logo" />
+    <div className={styles.onePost}>
+        <div className='w-full md:w-4/12 relative'>
+            <img src={image} className="pointer-events-none max-w-none w-full rounded-t-xl md:rounded-t-none" alt="logo" />
+            <img src={image} className="hover:animate-ping-once opacity-0 md:opacity-5 absolute top-0 max-w-none w-full" alt="logo" />
         </div>        
-        <div className='w-8/12 flex flex-col items-start pl-5'>
+        <div className='w-full md:w-8/12 flex flex-col items-start pl-0 mt-2 md:mt-0 md:pl-5'>
             <p className='text-xs font-bold text-slate-400 hover:text-slate-500'>{postTime}, {postDate}</p> 
-            <h3 className='text-lg my-2 leading-5'>
-                <a className='underline hover:text-orange-500' href={link} target='_blank' rel='noreferrer'>{title}</a>
-            </h3>
+              <a className="text-base md:text-lg my-2 leading-5 underline hover:text-orange-500" href={link} target='_blank' rel='noreferrer'>{title}</a>            
             <p className='text-xs'>{description}</p>               
         </div>
         <div className='absolute bottom-1 right-12 w-14 flex'>            

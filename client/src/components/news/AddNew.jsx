@@ -67,11 +67,11 @@ const AddNew = () => {
 
   return (
     <div className={styles.addNew} >
-        <h1 className='text-center text-3xl my-5'>Сторінка додавання нової публікації</h1>        
+        <h1 className='text-center text-xl md:text-3xl my-5'>Сторінка додавання нової публікації</h1>        
         
         {!added && 
         <>
-        <h3 className='text-center text-2xl my-4'>Заповнюйте форму</h3>
+        <h3 className='text-center text-lg md:text-2xl my-4'>Заповнюйте форму</h3>
         <div className={styles.addPostForm}>
             <label>Назва новини (Title)
                 <input type='text' placeholder='Заголовок' value={title} onChange={(e) => setTitle(e.target.value)} />
@@ -94,7 +94,7 @@ const AddNew = () => {
             
             <div className='flex justify-around items-center mt-3'>
                 <button onClick={resetForm} className='bg-slate-400 hover:bg-slate-200  rounded-xl px-3 py-1 h-10 hover:shadow-lg'>Скинути</button>
-                <button onClick={sendForm} className='bg-teal-500 rounded-xl px-8 py-3 hover:bg-teal-400 hover:shadow-lg'>Додати новину в БД</button>
+                <button onClick={sendForm} className='bg-teal-500 rounded-xl px-5 py-3 hover:bg-teal-400 hover:shadow-lg'>Додати новину в БД</button>
             </div>
         </div>
         </>       

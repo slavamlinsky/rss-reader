@@ -4,11 +4,11 @@ import styles from "../../styles/App.module.scss";
 const About = () => {
   return (
     <div className={styles.pageBack}>
-        <h1>Огляд проекту RSS Reader</h1>
+        <h1 className='text-2xl md:text-3xl'>Огляд проекту RSS Reader</h1>
         {/* https://api.jobitt.com/api/images/17920 */}
         <h2 className={styles.company}>Тестове завдання для компанії <span><img src='https://api.jobitt.com/api/images/17920' className="h-10 rounded-3xl inline-block pr-1" />DevIT</span></h2>        
         <h4 className='text-center mb-8'>Виконав: Млинський Вячеслав (slavamlinsky@gmail.com)</h4>        
-        <div className='w-4/5 m-auto'>
+        <div className='w-full px-8 md:w-4/5 m-auto'>
         <h3 className='text-xl font-bold text-center'>Parser RSS ленты + Admin UI</h3>
         <p><strong>Описание задачи</strong><br></br>
             1. Реализовать на NodeJS/<span className='text-slate-300'>Laravel</span> Parser RSS ленты

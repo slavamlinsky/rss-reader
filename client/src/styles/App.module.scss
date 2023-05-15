@@ -16,10 +16,10 @@
   @apply w-5/12 md:w-3/12 xl:w-2/12 flex justify-end pr-1;
 }
 .navlink {
-  @apply xl:mr-5 lg:mr-4 px-3 xl:text-lg text-base hover:text-cyan-900 py-1 transition-all delay-100 border-b-2 border-b-transparent hover:border-b-2 hover:border-indigo-500;
+  @apply xl:mr-5 lg:mr-4 px-3 text-sm md:text-base xl:text-lg hover:text-cyan-900 py-1 transition-all delay-100 border-b-2 border-b-transparent hover:border-b-2 hover:border-indigo-500;
 }
 .loginForm {
-  @apply bg-gradient-to-b from-slate-400 to-slate-500 w-96 flex flex-col m-auto p-4 rounded-md mt-3;
+  @apply bg-gradient-to-b from-slate-400 to-slate-500 w-11/12 sm:w-96 flex flex-col m-auto p-4 rounded-md mt-3;
 
   label {
     @apply flex flex-col text-sm mb-2;
@@ -48,6 +48,10 @@
     }
 }
 
+.onePost{
+  @apply w-full border-b-2 border-t-2 shadow-lg bg-slate-50 shadow-gray-400 border-cyan-700 hover:border-orange-400 px-4 pb-8 md:px-5 py-4 md:py-6 my-8 rounded-xl flex flex-col md:flex-row text-left relative;
+}
+
 .pageBack {
   @apply shadow-xl m-auto box-border w-full overflow-hidden pb-8;
 }
@@ -56,7 +60,7 @@
   @apply shadow-xl m-auto text-center box-border w-full overflow-hidden;
 
   .feedLogo {
-    @apply h-20 py-3 px-4 mt-6 bg-white rounded-3xl hover:animate-bounce cursor-pointer w-1/6 m-auto items-center;
+    @apply h-20 py-3 px-4 mt-6 bg-white rounded-3xl hover:animate-bounce cursor-pointer w-2/3 md:w-1/6 m-auto items-center;
 
     img {
       @apply m-auto;
@@ -70,9 +74,13 @@
       @apply bg-yellow-50;
 
       > div:first-child {
-        @apply w-6/12;
+        @apply w-full md:w-6/12;
       }
     }
+  }
+
+  .feedChangeBtn {
+    @apply py-1 px-2 mx-2 my-1 md:py-2 md:px-4 md:mx-3 md:my-2 rounded-md bg-slate-100 hover:bg-slate-300 items-center;
   }
 }
 
@@ -86,7 +94,7 @@
   }
 
   .addPostForm {
-    @apply w-3/5 m-auto max-w-xl bg-gradient-to-b from-slate-400 to-slate-500 rounded-lg flex flex-col p-3;
+    @apply w-10/12 md:w-3/5 m-auto max-w-xl bg-gradient-to-b from-slate-400 to-slate-500 rounded-lg flex flex-col p-3;
   }
 
   input[type="text"],
@@ -100,7 +108,7 @@
 }
 
 .company{
-    @apply text-center text-2xl m-2 cursor-pointer;
+    @apply text-center text-lg md:text-2xl m-2 cursor-pointer;
     & span {
         @apply  opacity-0;
         transition: all linear .5s;

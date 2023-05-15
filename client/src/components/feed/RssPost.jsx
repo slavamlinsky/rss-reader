@@ -33,22 +33,21 @@ const RssPost = ({ index, title = "", link = "", date = "", description = "", ca
     }
 
   return (
-    <div className="w-full border-b-2 border-t-2 shadow-lg bg-slate-50 shadow-gray-400 border-cyan-700 hover:border-orange-400 px-5 py-6 my-8 rounded-xl flex text-left relative">
-      <div className="w-4/12 relative">
-        <img src={image} className="pointer-events-none max-w-none w-full" alt="logo" />
-        <img src={image} className="hover:animate-ping-once opacity-15 absolute top-0 max-w-none w-full" alt="logo" />
+    <div className={styles.onePost}>
+      <div className="w-full md:w-4/12 relative">
+        <img src={image} className="pointer-events-none max-w-none w-full rounded-t-lg md:rounded-t-sm" alt="logo" />
+        <img src={image} className="hover:animate-ping-once opacity-0 md:opacity-15 absolute top-0 max-w-none w-full" alt="logo" />
       </div>
-      <div className="w-8/12 flex flex-col items-start pl-5">
-        <div className="flex flex-row justify-between w-full"><p className="text-xs font-bold text-slate-400 hover:text-slate-500">
-          {postTime}, {postDate}
-        </p>
-        <p className="text-xs font-bold text-slate-400 hover:text-slate-500">{category[0]}</p>
+      <div className="w-full md:w-8/12 flex flex-col items-start md:ml-5 mt-2 md:mt-0">
+        <div className="flex flex-row justify-between w-full">
+          <p className="text-xs font-normal md:font-bold text-slate-500 hover:text-slate-600">{postTime}, {postDate}</p>
+        <p className="text-xs font-normal md:font-bold text-slate-500 hover:text-slate-600">{category[0]}</p>
         </div>
-        <h3 className="text-lg my-2 leading-5">
-          <a className="underline hover:text-orange-500" href={link} target="_blank" rel="noreferrer">
+        
+          <a className="text-base md:text-lg my-2 leading-5 underline hover:text-orange-500" href={link} target="_blank" rel="noreferrer">
             {title}
           </a>
-        </h3>
+        
         <p className="text-xs">{description}</p>
       </div>
       <div className="absolute bottom-1 right-6 w-6 flex">

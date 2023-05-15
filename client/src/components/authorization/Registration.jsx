@@ -120,7 +120,7 @@ const Registration = () => {
             </label>
             <button onClick={RegistraionSend} className="authorization__btn">Зареєструватися</button>
             <br></br>
-            <small className='text-white text-center'>Вже маєте обліковий запис? Тоді <NavLink to='/login' className='underline'>ласкаво просимо</NavLink>.</small>
+            <small className='text-white text-center'>Маєте обліковий запис? Тоді <NavLink to='/login' className='underline'>ласкаво просимо</NavLink>.</small>
           </div>
         </>
       }

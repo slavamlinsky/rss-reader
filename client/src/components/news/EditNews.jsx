@@ -65,7 +65,7 @@ const EditNews = () => {
 
   return (
     <div className={styles.addNew} >
-        <h1 className='text-center text-3xl my-5'>Сторінка редагування публікації</h1>        
+        <h1 className='text-center text-xl md:text-3xl my-5'>Сторінка редагування публікації</h1>        
         <div className={styles.addPostForm}>
         {!updated && 
         <>
