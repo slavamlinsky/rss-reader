@@ -40,7 +40,7 @@ const News = () => {
             setLimit(newLimit)
         }
         if(newLimit >= totalCount && limit < totalCount){ 
-            alert("Тоже пересчитываем")
+            //alert("Тоже пересчитываем")
             setLimit(newLimit)
             //setTotalPages(totalCount, newLimit)
             setTotalPages(PageCounter(totalCount, newLimit))   
@@ -112,7 +112,7 @@ const News = () => {
             </div>
         </div>
         <div className='text-center text-sm flex flex-col md:flex-row justify-between w-full md:w-10/12 lg:w-2/3 xl:w-3/5 m-auto items-center px-4 mt-4 md:mt-12 mb-4 md:mb-8'>
-            <h4 className='text-center mb-4 md:mb-0'>Усього: {totalCount}{getNewsEnding(totalCount)}&nbsp;&nbsp;&nbsp;({totalPages} {getPagesEnding(totalPages)})</h4>
+            <h4 className='text-center mb-4 md:mb-0'>Усього: {totalCount} {getNewsEnding(totalCount)}&nbsp;&nbsp;&nbsp;({totalPages} {getPagesEnding(totalPages)})</h4>
             <div className='relative'>            
               Показати по:            
               <select className='py-1 pl-1 ml-1 pr-1 mr-2 outline-none' value={limit} onChange={(e) => changeLimit(e.target.value)}>                
@@ -155,7 +155,7 @@ const News = () => {
         {!searchName &&
         <>
             <div className='text-center text-sm flex flex-col md:flex-row justify-between w-full md:w-10/12 lg:w-2/3 xl:w-3/5 m-auto items-center px-4 mt-4'>
-                <h4 className='text-center'>Усього: {totalCount}{getNewsEnding(totalCount)}&nbsp;&nbsp;&nbsp;({totalPages} {getPagesEnding(totalPages)})</h4>
+                <h4 className='text-center'>Усього: {totalCount} {getNewsEnding(totalCount)}&nbsp;&nbsp;&nbsp;({totalPages} {getPagesEnding(totalPages)})</h4>
                 <div className='relative mt-4 md:mt-0'>            
                 Показати по:            
                 <select className='py-1 pl-1 ml-1 pr-1 mr-2 outline-none' value={limit} onChange={(e) => changeLimit(e.target.value)}>                
