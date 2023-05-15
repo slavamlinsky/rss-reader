@@ -72,7 +72,7 @@ async function addOnePost(title, pubDate, link, image, description) {
         description,
       });      
 
-      // Проверка существования этой новости в БД (по имени / но лучше по дате)
+      // Проверка существования этой новости в БД (по по дате)
       candidate = await Post.findOne({ pubDate })
       
       if(!candidate){
