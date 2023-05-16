@@ -1,7 +1,7 @@
 # RSS-reader (version 1.0.3)
 Read your RSS feeds and easily manage your favorite news.
 
-> Link to: [RSS-Reader](http://rss-reader.speaking.odessa.ua)
+🔍 > Link to: [RSS-Reader](http://rss-reader.speaking.odessa.ua)
 
 ## How to install this App  🚀
 
