@@ -5,7 +5,6 @@ Read your RSS feeds and easily manage your favorite news.
 
 ## How to install this App  🚀
 
----
 Run `make build` from root to build containers
 
 Run `make run` from root to run containers with docker-compose
