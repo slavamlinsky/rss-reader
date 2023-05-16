@@ -21,7 +21,7 @@ You can download project and then install all dependencies (both client & server
 $ npm install
 ```
 
-Create the `.env` file using the `.env.example` as a reference
+Create the `.env` file using the `.env.example` as a reference and put it to the /server/
 ```
 $ cp .env.example .env
 ```
