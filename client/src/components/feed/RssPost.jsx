@@ -44,7 +44,7 @@ const RssPost = ({ index, title = "", link = "", date = "", description = "", ca
         <p className="text-xs font-normal md:font-bold text-slate-500 hover:text-slate-600">{category[0]}</p>
         </div>
         
-          <a className="text-base md:text-lg my-2 leading-5 underline hover:text-orange-500" href={link} target="_blank" rel="noreferrer">
+          <a className="text-base md:text-lg my-2 md:leading-6 leading-5 underline hover:text-orange-500" href={link} target="_blank" rel="noreferrer">
             {title}
           </a>
         
