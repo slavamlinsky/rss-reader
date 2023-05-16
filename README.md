@@ -7,7 +7,9 @@ Read your RSS feeds and easily manage your favorite news.
 
 ---
 Run `make build` from root to build containers
+
 Run `make run` from root to run containers with docker-compose
+
 Run `make stop` from root to down all containers with docker-compose
 
 ---
