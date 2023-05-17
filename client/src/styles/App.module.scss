@@ -1,5 +1,5 @@
 .logo{
-    @apply flex w-5/12 md:w-3/12 lg:w-3/12 xl:w-2/12 font-medium text-gray-900 mb-0 md:mb-0 cursor-pointer pl-2;
+    @apply flex w-6/12 md:w-3/12 lg:w-3/12 xl:w-2/12 font-medium text-gray-900 mb-0 md:mb-0 cursor-pointer pl-2;
 
     & svg {
         @apply mr-2 transition-all text-white p-2 bg-indigo-500 rounded-full;
@@ -10,16 +10,16 @@
     }
 }
 .navmenu{
-  @apply w-2/12 sm:w-4/12 md:w-6/12 lg:w-6/12 xl:w-8/12 justify-center hidden md:flex;
+  @apply w-0 sm:w-4/12 md:w-6/12 lg:w-6/12 xl:w-8/12 justify-center hidden md:flex;
 }
 .navbtns{
-  @apply w-5/12 md:w-3/12 xl:w-2/12 flex justify-end pr-1;
+  @apply w-6/12 md:w-3/12 xl:w-2/12 flex justify-end pr-1;
 }
 .navlink {
   @apply xl:mr-5 lg:mr-4 px-3 text-sm md:text-base xl:text-lg hover:text-cyan-900 py-1 transition-all delay-100 border-b-2 border-b-transparent hover:border-b-2 hover:border-indigo-500;
 }
 .loginForm {
-  @apply bg-gradient-to-b from-slate-400 to-slate-500 w-11/12 sm:w-96 flex flex-col m-auto p-4 rounded-md mt-3;
+  @apply bg-gradient-to-b from-slate-400 to-slate-500 w-10/12 sm:w-96 flex flex-col m-auto p-3 rounded-md mt-4;
 
   label {
     @apply flex flex-col text-sm mb-2;
@@ -27,7 +27,7 @@
 
   input[type="text"],
   input[type="password"] {
-    @apply bg-cyan-50 text-base px-2 py-3 mt-1 outline-none focus:bg-cyan-100 border-r-4 border-transparent focus:border-r-cyan-700 w-full;
+    @apply bg-cyan-50 text-base px-2 py-2 mt-1 outline-none focus:bg-cyan-100 border-r-4 border-transparent focus:border-r-cyan-700 w-full;
   }
 
   > button {
@@ -38,6 +38,9 @@
   .passwordErrorMessage {
     @apply text-center text-white text-xs;
   }
+
+
+  .eye
 }
 
 .registredForm{
@@ -48,9 +51,7 @@
     }
 }
 
-.onePost{
-  @apply w-full border-b-2 border-t-2 shadow-lg bg-slate-50 shadow-gray-400 border-cyan-700 hover:border-orange-400 px-4 pb-8 md:px-5 py-4 md:py-6 my-8 rounded-xl flex flex-col md:flex-row text-left relative;
-}
+
 
 .pageBack {
   @apply shadow-xl m-auto box-border w-full overflow-hidden pb-8;
@@ -68,7 +69,7 @@
   }
 
   .feedline {
-    @apply w-10/12 sm:w-3/4 md:w-3/4 lg:w-3/5 m-auto;
+    @apply w-11/12 sm:w-3/4 md:w-3/4 lg:w-3/5 m-auto;
 
     > div:first-child {
       @apply bg-yellow-50;
@@ -77,10 +78,20 @@
         @apply w-full md:w-6/12;
       }
     }
+    /* Стили для поста OnePost */
+    > div {
+      @apply w-full border-b-2 border-t-2 shadow-lg bg-slate-50 shadow-gray-400 border-cyan-700 hover:border-orange-400 px-3 pb-8 md:px-5 py-4 md:py-6 mb-10 rounded-xl flex flex-col md:flex-row text-left relative;
+
+      .postLink{
+        @apply md:text-lg my-3 md:leading-5 leading-5 md:underline hover:text-orange-500 underline underline-offset-2;
+      }
+    }
   }
 
   .feedChangeBtn {
-    @apply py-1 px-2 mx-2 my-1 md:py-2 md:px-4 md:mx-3 md:my-2 rounded-md bg-slate-100 hover:bg-slate-300 items-center;
+    button {
+      @apply py-2 px-2 mx-2 my-2 md:py-2 md:px-4 md:mx-3 md:my-2 rounded-md bg-slate-100 hover:bg-slate-300 items-center;
+    }
   }
 }
 
@@ -94,7 +105,7 @@
   }
 
   .addPostForm {
-    @apply w-10/12 md:w-3/5 m-auto max-w-xl bg-gradient-to-b from-slate-400 to-slate-500 rounded-lg flex flex-col p-3;
+    @apply w-11/12 md:w-3/5 m-auto max-w-xl bg-gradient-to-b from-slate-400 to-slate-500 rounded-lg flex flex-col p-3;
   }
 
   input[type="text"],

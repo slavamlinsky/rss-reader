@@ -104,7 +104,7 @@ const EditNews = () => {
             
             <div className='flex justify-around items-center mt-3'>
                 <button onClick={resetForm} className='bg-slate-400 hover:bg-slate-200  rounded-xl px-3 py-1 h-10 hover:shadow-lg'>Скинути</button>
-                <button onClick={sendForm} className='bg-teal-500 rounded-xl px-8 py-3 hover:bg-teal-400 hover:shadow-lg'>Зберегти новину</button>
+                <button onClick={sendForm} className='bg-teal-500 rounded-xl px-4 py-3 hover:bg-teal-400 hover:shadow-lg'>Зберегти новину</button>
             </div>
         </>       
         }

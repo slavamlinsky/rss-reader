@@ -105,7 +105,7 @@ const Login = () => {
   return (
     <div>
       <h1 className='text-center text-3xl mt-4'>Вхід до системи</h1>
-      <h2 className='text-center bg text-xl mt-16'>Будь-ласка, заповніть форму</h2>
+      <h2 className='text-center bg text-xl mt-8'>Будь-ласка, заповніть форму</h2>
       <div className={styles.loginForm}>        
         <label>Login/Email
           <input value={email} onChange={(event) => setEmail(event.target.value)}
@@ -124,9 +124,8 @@ const Login = () => {
         </label>        
         <button onClick={LoginSend}>Увійти</button>
         <br></br>
-        <small className='text-white text-center'>Ви тут вперше? Спочатку <NavLink to='/registration' className='underline'>пройдіть реєстрацію</NavLink>.</small>
+        <small className='text-white text-center'>Ви тут вперше? <NavLink to='/registration' className='underline'>Пройдіть реєстрацію</NavLink>.</small>           
       </div>
-
     </div>
   )
 }

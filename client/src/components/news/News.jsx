@@ -95,14 +95,14 @@ const News = () => {
                 </svg>
                 Додати новину
             </NavLink>
-            <div className='flex flex-row items-center mt-2 md:mt-0'>            
-                Фільтр (пошук): 
+            <div className='flex flex-row items-center mt-4 md:mt-0'>            
+                Фільтр<span className='hidden sm:block'> (пошук)</span>: 
                 <div className='relative' >                
                     <input 
                     value={searchName} 
                     onChange={e => searchChangeHandler(e)} 
                     // onFocusCapture={e => console.log("Searching...")}
-                    className=' ml-1 pl-7 pr-2 md:pr-24 rounded-lg py-1 outline-none border-b focus:border-b-teal-600 focus:border-b' 
+                    className='ml-1 pl-6 pr-8 md:pr-24 rounded-lg py-1 outline-none border-b focus:border-b-teal-600 focus:border-b' 
                     type="text" 
                     placeholder="Введіть заголовок новини..."/>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 inline-block absolute left-2 top-2 opacity-20">
@@ -113,20 +113,20 @@ const News = () => {
         </div>
         <div className='text-center text-sm flex flex-col md:flex-row justify-between w-full md:w-10/12 lg:w-2/3 xl:w-3/5 m-auto items-center px-4 mt-4 md:mt-12 mb-4 md:mb-8'>
             <h4 className='text-center mb-4 md:mb-0'>Усього: {totalCount} {getNewsEnding(totalCount)}&nbsp;&nbsp;&nbsp;({totalPages} {getPagesEnding(totalPages)})</h4>
-            <div className='relative'>            
-              Показати по:            
-              <select className='py-1 pl-1 ml-1 pr-1 mr-2 outline-none' value={limit} onChange={(e) => changeLimit(e.target.value)}>                
-                  <option value="5">5шт</option>
-                  <option value="10">10шт</option>
-                  <option value="15">15шт</option>
-                  <option value="25">25шт</option>
-                  <option value="50">50шт</option>
-              </select>   
-              Сортувати:            
-              <select className='py-1 pl-1 ml-1 pr-1 outline-none' value={sort} onChange={(e) => setSort(e.target.value)}>                
-                  <option value="date">По даті</option>
-                  <option value="title">По назві</option>
-              </select>
+            <div className='relative'>
+                Показати по:
+                    <select className='py-1 pl-1 ml-1 pr-0 mr-2 outline-none' value={limit} onChange={(e) => changeLimit(e.target.value)}>
+                        <option value="5">5шт</option>
+                        <option value="10">10шт</option>
+                        <option value="15">15шт</option>
+                        <option value="25">25шт</option>
+                        <option value="50">50шт</option>
+                    </select>
+                Сортувати:
+                    <select className='py-1 pl-1 ml-1 pr-0 outline-none' value={sort} onChange={(e) => setSort(e.target.value)}>
+                        <option value="date">По даті</option>
+                        <option value="title">По назві</option>
+                    </select>
             </div>
         </div>
         

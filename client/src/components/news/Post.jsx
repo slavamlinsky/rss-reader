@@ -38,7 +38,7 @@ const Post = ({id, title="", link="", date="", description="", image=""}) => {
         </div>        
         <div className='w-full md:w-8/12 flex flex-col items-start pl-0 mt-2 md:mt-0 md:pl-5'>
             <p className='text-xs font-bold text-slate-400 hover:text-slate-500'>{postTime}, {postDate}</p> 
-              <a className="text-base md:text-lg my-2 md:leading-6 leading-5 underline hover:text-orange-500" href={link} target='_blank' rel='noreferrer'>{title}</a>            
+              <a className={styles.postLink} href={link} target='_blank' rel='noreferrer'>{title}</a>            
             <p className='text-xs'>{description}</p>               
         </div>
         <div className='absolute bottom-1 right-12 w-14 flex'>            

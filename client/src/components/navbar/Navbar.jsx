@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <div className='w-full bg-slate-300 pt-3'>
-      <div className='container flex justify-between m-auto items-center pb-1 md:pb-3'>
+      <div className='container flex justify-between m-auto items-center pb-1 md:pb-3 w-12/12 md:w-full px-1'>
         <div className={styles.logo}>        
           {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-12 h-12">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.098 19.902a3.75 3.75 0 005.304 0l6.401-6.402M6.75 21A3.75 3.75 0 013 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 003.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008z" />
@@ -44,7 +44,7 @@ const Navbar = () => {
         </div>
         <div className={styles.navbtns}>
           {!isAuth &&
-            <NavLink className='flex bg-teal-400 hover:bg-cyan-600 rounded-xl py-3 pl-4 pr-2' to="/login">Вхід
+            <NavLink className='flex bg-teal-400 hover:bg-cyan-600 rounded-xl py-2 pl-4 pr-2' to="/login">Вхід
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 inline-block mr-2 ml-1">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
               </svg></NavLink>}
@@ -62,7 +62,7 @@ const Navbar = () => {
           </button>}
         </div>        
       </div>
-      <div className='bg-slate-100 mt-1 mb-0 flex justify-around items-center text-center w-full sm:hidden px-1'>          
+      <div className='bg-slate-100 mt-1 mb-0 flex justify-around items-center text-center w-full sm:hidden px-1 py-1'>          
             <NavLink className={styles.navlink} to="/about">Про проект</NavLink>
             <NavLink className={styles.navlink} to="/feed">RSS стрічка</NavLink>
             {isAuth && <NavLink className={styles.navlink} to="/news">Мої новини</NavLink>}                      

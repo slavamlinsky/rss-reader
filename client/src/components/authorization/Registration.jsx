@@ -96,7 +96,7 @@ const Registration = () => {
       <h1 className='text-center text-3xl mt-4'>Реєстрація в системі</h1>
       {!isRegistred &&
         <>
-          <h2 className='text-center text-xl mt-16'>Будь-ласка, заповніть форму</h2>
+          <h2 className='text-center text-xl mt-8'>Будь-ласка, заповніть форму</h2>
           <div className={styles.loginForm}>
             <label>Ім'я та прізвище
               <input value={name} onChange={(event) => setName(event.target.value)}
@@ -120,7 +120,7 @@ const Registration = () => {
             </label>
             <button onClick={RegistraionSend} className="authorization__btn">Зареєструватися</button>
             <br></br>
-            <small className='text-white text-center'>Маєте обліковий запис? Тоді <NavLink to='/login' className='underline'>ласкаво просимо</NavLink>.</small>
+            <small className='text-white text-center'>Маєте обліковий запис? <NavLink to='/login' className='underline'>Ласкаво просимо</NavLink>.</small>
           </div>
         </>
       }
