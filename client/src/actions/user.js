@@ -11,13 +11,22 @@ export const registration = (name, email, password) => {
         `${API_URL}api/auth/registration`,
         params
       );
-      if (response.status === 200) {        
+      if (response.status === 200) {
         dispatch(registred(response.data.user));
       }
     } catch (e) {
       if (e.response.data.message === "Incorrect request") {
-        document.querySelector("#passwordError").innerHTML =
-          "Невдалий запит. Спробуйте пізніше.";
+        if (
+          e.response.data.errors.errors[0].msg ===
+          "Password should have from 4 to 8 symbols."
+        ) {
+          document.querySelector("#passwordError").innerHTML =
+            "Пароль має містити від 4 до 10 символів.";
+        } else {
+          document.querySelector("#passwordError").innerHTML =
+            "Невдалий запит. Спробуйте пізніше.";
+        }
+
         setTimeout(() => {
           document.querySelector("#passwordError").innerHTML = "";
         }, 3500);
