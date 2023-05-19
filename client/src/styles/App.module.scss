@@ -18,6 +18,12 @@
 .navlink {
   @apply xl:mr-5 lg:mr-4 px-3 text-sm md:text-base xl:text-lg hover:text-cyan-900 py-1 transition-all delay-100 border-b-2 border-b-transparent hover:border-b-2 hover:border-indigo-500;
 }
+.header1{
+  @apply text-2xl md:text-3xl;
+}
+.header2{
+  @apply text-center text-sm leading-5 md:leading-8 md:text-2xl;
+}
 .loginForm {
   @apply bg-gradient-to-b from-slate-400 to-slate-500 w-10/12 sm:w-96 flex flex-col m-auto p-3 rounded-md mt-4;
 
@@ -38,9 +44,7 @@
   .passwordErrorMessage {
     @apply text-center text-white text-xs;
   }
-
-
-  .eye
+  
 }
 
 .registredForm{

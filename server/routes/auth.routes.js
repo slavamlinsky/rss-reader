@@ -18,10 +18,16 @@ const generateAccessToken = (id) => {
 };
 
 // POST @/api/auth/registration - регистрация нового пользователя
-router.post("/registration",
-  [check("email", "Uncorrect email").isEmail()],
+router.post(
+  "/registration",
+  [
+    check("email", "Uncorrect email").isEmail(),
+    check("password", "Password should have from 4 to 8 symbols.").isLength({
+      min: 4,
+      max: 10,
+    }),
+  ],
   async (req, res) => {
-    console.log(req.body);
     try {
       const { name, email, password } = req.body;
 
@@ -61,53 +67,61 @@ router.post("/registration",
         message: "User was successfully created",
       });
     } catch (e) {
-      console.log(e);
+      console.error(e);
       res.send({ message: "Server Error" });
     }
   }
 );
 
 // POST @/api/auth/login - авторизация пользователя
-router.post("/login", async (req, res) => {
-  try {
-    const { email, password } = req.body;
+router.post(
+  "/login",
+  [check("email", "Uncorrect email").isEmail()],
+  async (req, res) => {
+    try {
+      const { email, password } = req.body;
 
-    const user = await User.findOne({ email });
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
+      // валидация входящих данных (простая проверка Email)
+      const errors = validationResult(req);
+
+      if (!errors.isEmpty()) {
+        return res.status(400).json({ message: "Incorrect Email", errors });
+      }
+
+      const user = await User.findOne({ email });
+      if (!user) {
+        return res.status(404).json({ message: "User not found" });
+      }
+
+      const isPassValid = bcrypt.compareSync(password, user.password);
+      if (!isPassValid) {
+        return res.status(404).json({ message: "Invalid password" });
+      }
+
+      const token = generateAccessToken(user._id, user.roles);
+
+      return res.json({
+        token,
+        user: {
+          id: user._id,
+          name: user.name,
+          email: user.email,
+          roles: user.roles,
+          isActivated: user.isActivated,
+          avatar: user.avatar,
+        },
+      });
+    } catch (e) {
+      console.error(e);
+      res.send({ message: "Server Error" });
     }
-
-    const isPassValid = bcrypt.compareSync(password, user.password);
-    if (!isPassValid) {
-      return res.status(404).json({ message: "Invalid password" });
-    }
-
-    //const token = jwt.sign({id: user._id}, process.env.secretKey, {expiresIn: "3h"} )
-    const token = generateAccessToken(user._id, user.roles);
-
-    return res.json({
-      token,
-      user: {
-        id: user._id,
-        name: user.name,
-        email: user.email,
-        roles: user.roles,
-        // diskSpace: user.diskSpace,
-        // usedSpace: user.usedSpace,
-        isActivated: user.isActivated,
-        avatar: user.avatar,
-      },
-    });
-  } catch (e) {
-    console.log(e);
-    res.send({ message: "Server Error" });
   }
-});
+);
 
 // GET @/api/auth/auth - проверка авторизации по существующему токену (в localStorage - действует 5 часов)
 router.get("/auth", authMiddleware, async (req, res) => {
   try {
-    const user = await User.findOne({ _id: req.user.id });    
+    const user = await User.findOne({ _id: req.user.id });
     const token = generateAccessToken(user._id, user.roles);
     return res.json({
       token,
@@ -118,7 +132,7 @@ router.get("/auth", authMiddleware, async (req, res) => {
       },
     });
   } catch (e) {
-    console.log(e);
+    console.error(e);
     res.send({ message: "Server Error" });
   }
 });
