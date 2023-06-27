@@ -81,6 +81,7 @@ async function loadingFirstNews(feedUrl) {
     const feed = await rssParser.parseURL(feedUrl);
     const thisMoment = Date.now();
     const rssUpdated = Date.parse(feed.lastBuildDate);
+    console.log("Loading all news", Date(thisMoment));
 
     if (rssUpdated < thisMoment) {
       feed.items.forEach((item) => {
@@ -110,13 +111,15 @@ async function checkNewsUpdated(feedUrl) {
         const term = Math.round(
           (thisMoment - Date.parse(item.pubDate)) / 1000 / 60
         );
+        console.log(Date(thisMoment));
+        console.log("Term", term);
         if (term <= 30) {
           addOnePost(
-            item.title.replaceAll("&quot;", '"').replaceAll("&#039;", "'"),
+            item.title.replace("&quot;", '"').replace("&#039;", "'"),
             item.pubDate,
             item.link,
             item.enclosure.url,
-            item.content.replaceAll("&quot;", '"').replaceAll("&#039;", "'")
+            item.content.replace("&quot;", '"').replace("&#039;", "'")
           );
         }
       });

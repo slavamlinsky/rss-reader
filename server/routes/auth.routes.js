@@ -22,7 +22,7 @@ router.post(
   "/registration",
   [
     check("email", "Uncorrect email").isEmail(),
-    check("password", "Password should have from 4 to 8 symbols.").isLength({
+    check("password", "Password should have from 4 to 10 symbols.").isLength({
       min: 4,
       max: 10,
     }),

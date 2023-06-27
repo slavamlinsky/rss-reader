@@ -18,7 +18,7 @@ export const registration = (name, email, password) => {
       if (e.response.data.message === "Incorrect request") {
         if (
           e.response.data.errors.errors[0].msg ===
-          "Password should have from 4 to 8 symbols."
+          "Password should have from 4 to 10 symbols."
         ) {
           document.querySelector("#passwordError").innerHTML =
             "Пароль має містити від 4 до 10 символів.";

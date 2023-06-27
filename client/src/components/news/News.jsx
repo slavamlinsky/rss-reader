@@ -106,9 +106,8 @@ const News = () => {
           <div className="relative">
             <input
               value={searchName}
-              onChange={(e) => searchChangeHandler(e)}
-              // onFocusCapture={e => console.log("Searching...")}
-              className="ml-1 pl-6 pr-8 md:pr-24 rounded-lg py-1 outline-none border-b focus:border-b-teal-600 focus:border-b"
+              onChange={(e) => searchChangeHandler(e)}              
+              className="ml-1 pl-6 pr-8 md:pr-24 rounded-lg py-1 outline-none border-b focus:border-b-teal-600 focus:border-b shadow-md"
               type="text"
               placeholder="Введіть заголовок новини..."
             />
