@@ -95,33 +95,38 @@ class PostController {
     try {
       const { title, link, pubDate, image, description } = req.body;
 
-      let filedate = Date.now();
-
-      let correctDate = pubDate || Date(filedate);
-
-      const post = new Post({
-        title,
-        pubDate: correctDate,
-        link,
-        image,
-        description,
-      });
-
-      // проверяем существование такого email в БД
-      const candidate = await Post.findOne({ pubDate });
-
-      if (candidate) {
+      if (title === "" || link === "" || description === "") {
         return res.status(400).json({
-          message: `News with this pubDate already exists in DataBase`,
+          message: `Title, link and description can not be empty.`,
+        });
+      } else {
+        let filedate = Date.now();
+        let correctDate = pubDate || Date(filedate);
+
+        const post = new Post({
+          title,
+          pubDate: correctDate,
+          link,
+          image,
+          description,
+        });
+
+        // проверяем существование такой новости в БД
+        const candidate = await Post.findOne({ pubDate });
+
+        if (candidate) {
+          return res.status(400).json({
+            message: `News with this pubDate already exists in DataBase`,
+          });
+        }
+
+        await post.save();
+
+        return res.json({
+          post,
+          message: "Post was added successfully",
         });
       }
-
-      await post.save();
-
-      return res.json({
-        post,
-        message: "Post was added successfully",
-      });
     } catch (e) {
       console.error(e);
       res.send({ message: "Server Error" });

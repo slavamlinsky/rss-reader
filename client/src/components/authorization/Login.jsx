@@ -70,7 +70,7 @@ const Login = () => {
   }
 
   function LoginSend() {
-    // Валідація введеної email адреси та пароля перед п
+    // Валідація введеної email адреси та пароля перед відправкою на сервер
     if (checkMail() && checkPassword()) {
       dispatch(login(email, password));
     }

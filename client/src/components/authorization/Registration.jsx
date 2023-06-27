@@ -30,6 +30,17 @@ const Registration = () => {
       pswrdbtnref.current.className = "pswrd_eye eye_show";
     }
   }
+  function checkName() {
+    if (!name) {
+      document.querySelector("#nameError").innerHTML =
+        "Поле name не може бути пустим";
+      setTimeout(() => {
+        document.querySelector("#nameError").innerHTML = "";
+      }, 2500);
+      return false;
+    }
+    return true;
+  }
 
   function checkMail() {
     // Перевіряємо валідність введеної email адреси
@@ -41,6 +52,7 @@ const Registration = () => {
       setTimeout(() => {
         document.querySelector("#emailError").innerHTML = "";
       }, 2500);
+      return false;
     }
     if (!email) {
       document.querySelector("#emailError").innerHTML =
@@ -48,42 +60,26 @@ const Registration = () => {
       setTimeout(() => {
         document.querySelector("#emailError").innerHTML = "";
       }, 2500);
+      return false;
     }
+    return true;
   }
 
   function checkPassword() {
-    if (!password) {
-      //alert('Пожалуйста, введите email')
+    if (!password) {      
       document.querySelector("#passwordError").innerHTML =
         "Введіть пароль, будь-ласка";
       setTimeout(() => {
         document.querySelector("#passwordError").innerHTML = "";
       }, 2500);
+      return false;
     }
+    return true;
   }
 
-  function RegistraionSend() {
-    if (!email) {
-      document.querySelector("#emailError").innerHTML =
-        "Поле email не може бути пустим";
-      setTimeout(() => {
-        document.querySelector("#emailError").innerHTML = "";
-      }, 3500);
-    }
-    if (!password) {
-      document.querySelector("#passwordError").innerHTML =
-        "Введіть пароль, будь-ласка";
-      setTimeout(() => {
-        document.querySelector("#passwordError").innerHTML = "";
-      }, 3500);
-    }
-
-    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/; //eslint-disable-line
-
-    if (email && password) {
-      if (reg.test(email) !== false) {
-        dispatch(registration(name, email, password));
-      }
+  function RegistraionSend() {   
+    if (checkName() && checkMail() && checkPassword()) {      
+        dispatch(registration(name, email, password));      
     }
   }
 
