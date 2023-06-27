@@ -80,8 +80,7 @@ async function loadingFirstNews(feedUrl) {
   try {
     const feed = await rssParser.parseURL(feedUrl);
     const thisMoment = Date.now();
-    const rssUpdated = Date.parse(feed.lastBuildDate);
-    console.log("Loading all news", Date(thisMoment));
+    const rssUpdated = Date.parse(feed.lastBuildDate);    
 
     if (rssUpdated < thisMoment) {
       feed.items.forEach((item) => {
@@ -111,8 +110,7 @@ async function checkNewsUpdated(feedUrl) {
         const term = Math.round(
           (thisMoment - Date.parse(item.pubDate)) / 1000 / 60
         );
-        console.log(Date(thisMoment));
-        console.log("Term", term);
+        
         if (term <= 30) {
           addOnePost(
             item.title.replace("&quot;", '"').replace("&#039;", "'"),
@@ -132,9 +130,8 @@ async function checkNewsUpdated(feedUrl) {
 // При запуске пробуем загружать сразу все новости (одним методом)
 loadingFirstNews(rssURL);
 
-// И потом добавляем раз в 30 минут свежие - (дополнительно проверяем существование в базе)
-
-const job = new cronJob("*/30 * * * *", () => {
+// И потом добавляем раз в 60 минут свежие - (дополнительно проверяем существование в базе)
+const job = new cronJob("*/60 * * * *", () => {
   checkNewsUpdated(rssURL);
 });
 
